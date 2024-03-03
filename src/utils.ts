@@ -28,10 +28,10 @@ function matches(question: FilloutQuestion, clause: FilterClauseType) {
  */
 export function filterQuestions(
   questions: FilloutQuestion[],
-  clauses: FilterClauseType[],
+  clauses?: FilterClauseType[],
 ): FilloutQuestion[] {
   return questions.filter((question) => {
-    return clauses.every((clause) => {
+    return clauses?.every((clause) => {
       return clause.id !== question.id || matches(question, clause);
     });
   });
