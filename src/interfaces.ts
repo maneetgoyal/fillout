@@ -14,3 +14,14 @@ export interface FilloutQueryParams {
   sort?: 'asc' | 'desc';
   filterClauses?: FilterClauseType[];
 }
+
+interface FilloutResponse {
+  [key: string]: unknown;
+  questions: { id: string; name: string; type: string; value: string }[];
+}
+
+export interface FilloutResponseBody {
+  pageCount: number;
+  totalResponses: number;
+  responses: FilloutResponse[];
+}
