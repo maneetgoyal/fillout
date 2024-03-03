@@ -19,6 +19,7 @@ app.get(
   (
     req: Request<{ formId: string }, unknown, unknown, FilloutQueryParams>,
     res: Response,
+    next,
   ) => {
     axios
       .get(
@@ -34,6 +35,7 @@ app.get(
         } else {
           console.log('Unexpected error: ', err);
         }
+        next(err);
       });
   },
 );
