@@ -59,7 +59,7 @@ export interface FilloutQuestion {
   value: string;
 }
 
-interface FilloutResponse {
+export interface FilloutResponse {
   [key: string]: unknown;
   questions: FilloutQuestion[];
 }

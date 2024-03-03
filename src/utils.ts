@@ -1,4 +1,8 @@
-import type { FilloutQuestion, FilterClauseType } from './interfaces.js';
+import type {
+  FilloutQuestion,
+  FilloutResponse,
+  FilterClauseType,
+} from './interfaces.js';
 
 function matches(question: FilloutQuestion, clause: FilterClauseType): boolean {
   let decision = false;
@@ -26,17 +30,13 @@ function matches(question: FilloutQuestion, clause: FilterClauseType): boolean {
  * @param questions
  * @param filter
  */
-export function filterQuestions(
-  questions: FilloutQuestion[],
-  clauses?: FilterClauseType[],
-): FilloutQuestion[] {
-  let output = questions;
-  if (Array.isArray(clauses)) {
-    output = questions.filter((question) => {
-      return clauses.every((clause) => {
-        return matches(question, clause);
-      });
+export function filterResponse(
+  response: FilloutResponse,
+  clauses: FilterClauseType[],
+): boolean {
+  return clauses.every((clause) => {
+    return response.questions.some((question) => {
+      return matches(question, clause);
     });
-  }
-  return output;
+  });
 }

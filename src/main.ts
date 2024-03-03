@@ -4,7 +4,7 @@ import express from 'express';
 import type { AxiosResponse } from 'axios';
 import type { Express, Request, Response } from 'express';
 import type { FilloutQueryParams, FilloutResponseBody } from './interfaces.js';
-import { filterQuestions } from './utils.js';
+import { filterResponse } from './utils.js';
 
 dotenv.config();
 
@@ -30,9 +30,13 @@ app.get(
       )
       .then(({ data }) => {
         const responsesPerPage = data.responses.length / data.pageCount;
-        const filteredResponses = data.responses.filter(
-          (ele) =>
-            filterQuestions(ele.questions, JSON.parse(req.query.filters as unknown as string)).length > 0,
+        const filteredResponses = data.responses.filter((ele) =>
+          filterResponse(
+            ele,
+            typeof req.query.filters === 'string'
+              ? JSON.parse(req.query.filters)
+              : [],
+          ),
         );
         res.send({
           totalResponses: filteredResponses.length,
