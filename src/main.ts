@@ -4,6 +4,7 @@ import express from 'express';
 import type { AxiosResponse } from 'axios';
 import type { Express, Request, Response } from 'express';
 import type { FilloutQueryParams, FilloutResponseBody } from './interfaces.js';
+import { filterQuestions } from './utils.js';
 
 dotenv.config();
 
@@ -28,7 +29,8 @@ app.get(
         { params: req.query },
       )
       .then(({ data }) => {
-        res.send(data);
+        const responses = data.responses.filter((ele) => filterQuestions(ele.questions, req.query.filterClauses).length > 0);
+        res.send({ ...data, responses });
       })
       .catch((err) => {
         if (axios.isAxiosError(err)) {
