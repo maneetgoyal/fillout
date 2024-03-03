@@ -1,12 +1,9 @@
-# node-typescript-boilerplate
+# Fillout API
 
 [![Sponsor][sponsor-badge]][sponsor]
 [![TypeScript version][ts-badge]][typescript-5-3]
 [![Node.js version][nodejs-badge]][nodejs]
 [![APLv2][license-badge]][license]
-[![Build Status - GitHub Actions][gha-badge]][gha-ci]
-
-👩🏻‍💻 Developer Ready: A comprehensive template. Works out of the box for most [Node.js][nodejs] projects.
 
 🏃🏽 Instant Value: All basic tools included and configured:
 
@@ -24,25 +21,6 @@
 
 This project is intended to be used with the latest Active LTS release of [Node.js][nodejs].
 
-### Clone repository
-
-To clone the repository, use the following commands:
-
-```sh
-git clone https://github.com/jsynowiec/node-typescript-boilerplate
-cd node-typescript-boilerplate
-npm install
-```
-
-### Download latest release
-
-Download and unzip the current **main** branch or one of the tags:
-
-```sh
-wget https://github.com/jsynowiec/node-typescript-boilerplate/archive/main.zip -O node-typescript-boilerplate.zip
-unzip node-typescript-boilerplate.zip && rm node-typescript-boilerplate.zip
-```
-
 ## Available Scripts
 
 - `clean` - remove transpiled files,
@@ -59,10 +37,6 @@ This template uses native [ESM][esm]. Make sure to read [this][nodejs-esm], and 
 If your project requires CommonJS, you will have to [convert to ESM][sindresorhus-esm].
 
 Please do not open issues for questions regarding CommonJS or ESM on this repo.
-
-## Backers & Sponsors
-
-Support this project by becoming a [sponsor][sponsor].
 
 ## License
 
