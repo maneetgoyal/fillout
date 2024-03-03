@@ -52,9 +52,16 @@ type QuestionType =
   | 'TimePicker'
   | 'URLInput';
 
+interface FilloutQuestion {
+  id: string;
+  name: string;
+  type: QuestionType;
+  value: string;
+}
+
 interface FilloutResponse {
   [key: string]: unknown;
-  questions: { id: string; name: string; type: QuestionType; value: string }[];
+  questions: FilloutQuestion[];
 }
 
 export interface FilloutResponseBody {
