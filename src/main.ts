@@ -33,7 +33,7 @@ app.get(
         const filteredResponses = data.responses.filter((ele) =>
           filterResponse(
             ele,
-            typeof req.query.filters === 'string'
+            typeof req.query.filters === 'string' && req.query.filters !== ''
               ? JSON.parse(req.query.filters)
               : [],
           ),
