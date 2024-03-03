@@ -20,7 +20,11 @@ app.get('/:formId/filteredResponses', (req: Request, res: Response) => {
       res.send(data);
     })
     .catch((err) => {
-      console.log(err.errors);
+      if (axios.isAxiosError(err)) {
+        console.log('Error message: ', err.message);
+      } else {
+        console.log('Unexpected error: ', err);
+      }
     });
 });
 
