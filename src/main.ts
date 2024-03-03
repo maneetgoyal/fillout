@@ -29,11 +29,16 @@ app.get(
         { params: req.query },
       )
       .then(({ data }) => {
-        const responses = data.responses.filter(
+        const responsesPerPage = data.responses.length / data.pageCount;
+        const filteredResponses = data.responses.filter(
           (ele) =>
             filterQuestions(ele.questions, req.query.filterClauses).length > 0,
         );
-        res.send({ ...data, totalResponses: responses.length, responses });
+        res.send({
+          totalResponses: filteredResponses.length,
+          pageCount: Math.ceil(filteredResponses.length / responsesPerPage),
+          responses: filteredResponses,
+        });
       })
       .catch((err) => {
         if (axios.isAxiosError(err)) {
