@@ -26,7 +26,7 @@ app.get(
     axios
       .get<FilloutResponseBody, AxiosResponse<FilloutResponseBody>>(
         `https://api.fillout.com/v1/api/forms/${req.params.formId}/submissions`,
-        { params: req.query },
+        { params: { ...req.query, filters: JSON.parse(req.query.filters as unknown as string) } },
       )
       .then(({ data }) => {
         const responsesPerPage = data.responses.length / data.pageCount;

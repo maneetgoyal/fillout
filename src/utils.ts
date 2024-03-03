@@ -1,6 +1,6 @@
 import type { FilloutQuestion, FilterClauseType } from './interfaces.js';
 
-function matches(question: FilloutQuestion, clause: FilterClauseType) {
+function matches(question: FilloutQuestion, clause: FilterClauseType): boolean {
   let decision = false;
   if (question.id === clause.id) {
     switch (clause.condition) {
