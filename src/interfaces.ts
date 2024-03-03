@@ -15,9 +15,46 @@ export interface FilloutQueryParams {
   filterClauses?: FilterClauseType[];
 }
 
+type QuestionType =
+  | 'Address'
+  | 'AudioRecording'
+  | 'Calcom'
+  | 'Calendly'
+  | 'Captcha'
+  | 'Checkbox'
+  | 'Checkboxes'
+  | 'ColorPicker'
+  | 'CurrencyInput'
+  | 'DatePicker'
+  | 'DateRange'
+  | 'DateTimePicker'
+  | 'Dropdown'
+  | 'EmailInput'
+  | 'FileUpload'
+  | 'ImagePicker'
+  | 'LocationCoordinates'
+  | 'LongAnswer'
+  | 'Matrix'
+  | 'MultiSelect'
+  | 'MultipleChoice'
+  | 'NumberInput'
+  | 'OpinionScale'
+  | 'Password'
+  | 'Payment'
+  | 'PhoneNumber'
+  | 'Ranking'
+  | 'RecordPicker'
+  | 'ShortAnswer'
+  | 'Signature'
+  | 'Slider'
+  | 'StarRating'
+  | 'Switch'
+  | 'TimePicker'
+  | 'URLInput';
+
 interface FilloutResponse {
   [key: string]: unknown;
-  questions: { id: string; name: string; type: string; value: string }[];
+  questions: { id: string; name: string; type: QuestionType; value: string }[];
 }
 
 export interface FilloutResponseBody {
