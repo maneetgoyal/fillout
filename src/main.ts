@@ -32,7 +32,7 @@ app.get(
         const responsesPerPage = data.responses.length / data.pageCount;
         const filteredResponses = data.responses.filter(
           (ele) =>
-            filterQuestions(ele.questions, req.query.filterClauses).length > 0,
+            filterQuestions(ele.questions, req.query.filters).length > 0,
         );
         res.send({
           totalResponses: filteredResponses.length,

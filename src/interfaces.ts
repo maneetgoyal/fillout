@@ -12,7 +12,7 @@ export interface FilloutQueryParams {
   status?: 'in_progress' | 'finished';
   includeEditLink?: boolean;
   sort?: 'asc' | 'desc';
-  filterClauses?: FilterClauseType[];
+  filters?: FilterClauseType[];
 }
 
 type QuestionType =
