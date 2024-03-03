@@ -15,7 +15,7 @@ app.get('/', (_req: Request, res: Response) => {
 
 app.get('/:formId/filteredResponses', (req: Request, res: Response) => {
   axios
-    .get(`https://api.fillout.com/v1/api/forms/${req.params.formId}`)
+    .get(`https://api.fillout.com/v1/api/forms/${req.params.formId}/submissions`)
     .then(({ data }) => {
       res.send(data);
     })
