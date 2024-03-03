@@ -13,24 +13,18 @@
 - [TypeScript][typescript] [5.3][typescript-5-3]
 - [ESM][esm]
 - [ESLint][eslint] with some initial rules recommendation
-- [Jest][jest] for fast unit testing and code coverage
-- Type definitions for Node.js and Jest
+- Type definitions for Node.js
 - [Prettier][prettier] to enforce consistent code style
 - NPM [scripts](#available-scripts) for common operations
 - [EditorConfig][editorconfig] for consistent coding style
 - Reproducible environments thanks to [Volta][volta]
 - Example configuration for [GitHub Actions][gh-actions]
-- Simple example of TypeScript code and unit test
 
 🤲 Free as in speech: available under the APLv2 license.
 
 ## Getting Started
 
 This project is intended to be used with the latest Active LTS release of [Node.js][nodejs].
-
-### Use as a repository template
-
-To start, just click the **[Use template][repo-template-action]** link (or the green button). Start adding your code in the `src` and unit tests in the `__tests__` directories.
 
 ### Clone repository
 
@@ -53,14 +47,12 @@ unzip node-typescript-boilerplate.zip && rm node-typescript-boilerplate.zip
 
 ## Available Scripts
 
-- `clean` - remove coverage data, Jest cache and transpiled files,
-- `prebuild` - lint source files and tests before building,
+- `clean` - remove transpiled files,
+- `prebuild` - lint source files before building,
 - `build` - transpile TypeScript to ES6,
 - `build:watch` - interactive watch mode to automatically transpile source files,
-- `lint` - lint source files and tests,
+- `lint` - lint source files,
 - `prettier` - reformat files,
-- `test` - run tests,
-- `test:watch` - interactive watch mode to automatically re-run tests
 
 ## Additional Information
 
@@ -97,9 +89,7 @@ Licensed under the APLv2. See the [LICENSE](https://github.com/jsynowiec/node-ty
 [license]: https://github.com/jsynowiec/node-typescript-boilerplate/blob/main/LICENSE
 [sponsor-badge]: https://img.shields.io/badge/♥-Sponsor-fc0fb5.svg
 [sponsor]: https://github.com/sponsors/jsynowiec
-[jest]: https://facebook.github.io/jest/
 [eslint]: https://github.com/eslint/eslint
-[wiki-js-tests]: https://github.com/jsynowiec/node-typescript-boilerplate/wiki/Unit-tests-in-plain-JavaScript
 [prettier]: https://prettier.io
 [volta]: https://volta.sh
 [volta-getting-started]: https://docs.volta.sh/guide/getting-started
