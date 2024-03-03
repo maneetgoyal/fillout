@@ -34,7 +34,7 @@ export function filterQuestions(
   if (Array.isArray(clauses)) {
     output = questions.filter((question) => {
       return clauses.every((clause) => {
-        return clause.id !== question.id || matches(question, clause);
+        return matches(question, clause);
       });
     });
   }

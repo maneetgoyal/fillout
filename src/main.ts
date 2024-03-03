@@ -26,13 +26,13 @@ app.get(
     axios
       .get<FilloutResponseBody, AxiosResponse<FilloutResponseBody>>(
         `https://api.fillout.com/v1/api/forms/${req.params.formId}/submissions`,
-        { params: { ...req.query, filters: JSON.parse(req.query.filters as unknown as string) } },
+        { params: req.query },
       )
       .then(({ data }) => {
         const responsesPerPage = data.responses.length / data.pageCount;
         const filteredResponses = data.responses.filter(
           (ele) =>
-            filterQuestions(ele.questions, req.query.filters).length > 0,
+            filterQuestions(ele.questions, JSON.parse(req.query.filters as unknown as string)).length > 0,
         );
         res.send({
           totalResponses: filteredResponses.length,
