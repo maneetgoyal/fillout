@@ -12,10 +12,10 @@ app.get('/', (_req: Request, res: Response) => {
 });
 
 app.get('/:formId/filteredResponses', (req: Request, res: Response) => {
-  axios.get(`/v1/api/forms/${req.params.formId}`).then((response) => {
-    res.send(response);
+  axios.get(`https://api.fillout.com/v1/api/forms/${req.params.formId}`).then(({ data }) => {
+    res.send(data);
   }).catch((err) => {
-    console.log(err);
+    console.log(err.errors);
   });
 });
 
