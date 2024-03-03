@@ -29,7 +29,10 @@ app.get(
         { params: req.query },
       )
       .then(({ data }) => {
-        const responses = data.responses.filter((ele) => filterQuestions(ele.questions, req.query.filterClauses).length > 0);
+        const responses = data.responses.filter(
+          (ele) =>
+            filterQuestions(ele.questions, req.query.filterClauses).length > 0,
+        );
         res.send({ ...data, totalResponses: responses.length, responses });
       })
       .catch((err) => {
