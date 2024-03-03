@@ -77,8 +77,6 @@ Licensed under the APLv2. See the [LICENSE](https://github.com/jsynowiec/node-ty
 [typescript-5-3]: https://devblogs.microsoft.com/typescript/announcing-typescript-5-3/
 [license-badge]: https://img.shields.io/badge/license-APLv2-blue.svg
 [license]: https://github.com/jsynowiec/node-typescript-boilerplate/blob/main/LICENSE
-[sponsor-badge]: https://img.shields.io/badge/♥-Sponsor-fc0fb5.svg
-[sponsor]: https://github.com/sponsors/jsynowiec
 [eslint]: https://github.com/eslint/eslint
 [prettier]: https://prettier.io
 [repo-template-action]: https://github.com/jsynowiec/node-typescript-boilerplate/generate
