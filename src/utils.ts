@@ -18,6 +18,7 @@ function matches(question: FilloutQuestion, clause: FilterClauseType) {
                 break;
         }
     }
+    return decision;
 }
 
 /**
