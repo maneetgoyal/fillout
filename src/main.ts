@@ -23,7 +23,7 @@ app.get(
     next,
   ) => {
     axios
-      .get<unknown, AxiosResponse<FilloutResponseBody>>(
+      .get<FilloutResponseBody, AxiosResponse<FilloutResponseBody>>(
         `https://api.fillout.com/v1/api/forms/${req.params.formId}/submissions`,
         { params: req.query },
       )
