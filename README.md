@@ -1,11 +1,10 @@
 # Fillout API
 
-[![Sponsor][sponsor-badge]][sponsor]
 [![TypeScript version][ts-badge]][typescript-5-3]
 [![Node.js version][nodejs-badge]][nodejs]
 [![APLv2][license-badge]][license]
 
-🏃🏽 Instant Value: All basic tools included and configured:
+Some basic tools included and configured:
 
 - [TypeScript][typescript] [5.3][typescript-5-3]
 - [ESM][esm]
