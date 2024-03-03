@@ -1,8 +1,9 @@
 import axios from 'axios';
 import dotenv from 'dotenv';
 import express from 'express';
+import type { AxiosResponse } from 'axios';
 import type { Express, Request, Response } from 'express';
-import type { FilloutQueryParams } from './interfaces.js';
+import type { FilloutQueryParams, FilloutResponseBody } from './interfaces.js';
 
 dotenv.config();
 
@@ -18,11 +19,11 @@ app.get(
   '/:formId/filteredResponses',
   (
     req: Request<{ formId: string }, unknown, unknown, FilloutQueryParams>,
-    res: Response,
+    res: Response<FilloutResponseBody>,
     next,
   ) => {
     axios
-      .get(
+      .get<unknown, AxiosResponse<FilloutResponseBody>>(
         `https://api.fillout.com/v1/api/forms/${req.params.formId}/submissions`,
         { params: req.query },
       )
