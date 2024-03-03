@@ -18,6 +18,7 @@
     "typescript": "~5.3"
   },
   "scripts": {
+    "prestart": "npm run build",
     "start": "node build/src/main.js",
     "clean": "rimraf build tmp",
     "prebuild": "npm run lint",
